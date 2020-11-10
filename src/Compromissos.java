@@ -1,4 +1,4 @@
-public class Reunioes extends Compromissos
+public class Compromissos
 {
     private String data;
     private Hora hora;

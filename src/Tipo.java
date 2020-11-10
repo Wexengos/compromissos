@@ -1,2 +1,4 @@
-public class Tipo {
+public class Tipo
+{
+
 }

@@ -1,8 +1,5 @@
-public class Aulas
+public class Aulas extends Compromissos
 {
-    private String data;
-    private Hora hora;
-    private int duracao;
     private String disciplina;
     private Tipo tipo;
 }
