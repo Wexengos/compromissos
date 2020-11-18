@@ -1,6 +1,6 @@
 package src;
 
-public class Compromissos
+public abstract class Compromissos
 {
     private String data;
     private String hora;
@@ -74,5 +74,18 @@ public class Compromissos
 
     public void setAdiavel(boolean adiavel) {
         this.adiavel = adiavel;
+    }
+
+    @Override
+    public String toString() {
+        return "Compromissos{" +
+                "data='" + data + '\'' +
+                ", hora='" + hora + '\'' +
+                ", duracao=" + duracao +
+                ", indentificador=" + indentificador +
+                ", tipoIdentificador=" + tipoIdentificador +
+                ", multiplicador=" + multiplicador +
+                ", adiavel=" + adiavel +
+                '}';
     }
 }

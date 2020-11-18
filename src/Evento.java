@@ -9,6 +9,8 @@ public class Evento extends Compromissos{
         super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel);
         this.local = local;
         this.tipo = tipo;
+        this.setMultiplicador(3);
+        this.setAdiavel(false);
     }
 
     public String getLocal() {
