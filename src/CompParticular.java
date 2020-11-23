@@ -3,8 +3,8 @@ package src;
 public class CompParticular extends Compromissos{
     private String motivo;
 
-    public CompParticular(String data, String hora, int duracao, int indentificador, char tipoIdentificador, int multiplicador, boolean adiavel, String motivo) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel);
+    public CompParticular(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, String motivo, int grauPrioridade) {
+        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade);
         this.motivo = motivo;
         this.setMultiplicador(2);
         this.setAdiavel(true);

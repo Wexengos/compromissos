@@ -6,11 +6,12 @@ public abstract class Compromissos
     private String hora;
     private int duracao;
     private int indentificador;
-    private char tipoIdentificador;
+    private String tipoIdentificador;
     private int multiplicador;
     private boolean adiavel;
+    private int grauPrioridade;
 
-    public Compromissos(String data, String hora, int duracao, int indentificador, char tipoIdentificador, int multiplicador, boolean adiavel) {
+    public Compromissos(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade) {
         this.data = data;
         this.hora = hora;
         this.duracao = duracao;
@@ -18,6 +19,7 @@ public abstract class Compromissos
         this.tipoIdentificador = tipoIdentificador;
         this.multiplicador = multiplicador;
         this.adiavel = adiavel;
+        this.grauPrioridade = grauPrioridade;
     }
 
     public String getData() {
@@ -52,11 +54,11 @@ public abstract class Compromissos
         this.indentificador = indentificador;
     }
 
-    public char getTipoIdentificador() {
+    public String getTipoIdentificador() {
         return tipoIdentificador;
     }
 
-    public void setTipoIdentificador(char tipoIdentificador) {
+    public void setTipoIdentificador(String tipoIdentificador) {
         this.tipoIdentificador = tipoIdentificador;
     }
 
@@ -76,6 +78,14 @@ public abstract class Compromissos
         this.adiavel = adiavel;
     }
 
+    public int getGrauPrioridade() {
+        return grauPrioridade;
+    }
+
+    public void setGrauPrioridade(int grauPrioridade) {
+        this.grauPrioridade = grauPrioridade;
+    }
+
     @Override
     public String toString() {
         return "Compromissos{" +
@@ -83,9 +93,10 @@ public abstract class Compromissos
                 ", hora='" + hora + '\'' +
                 ", duracao=" + duracao +
                 ", indentificador=" + indentificador +
-                ", tipoIdentificador=" + tipoIdentificador +
+                ", tipoIdentificador='" + tipoIdentificador + '\'' +
                 ", multiplicador=" + multiplicador +
                 ", adiavel=" + adiavel +
+                ", grauPrioridade=" + grauPrioridade +
                 '}';
     }
 }

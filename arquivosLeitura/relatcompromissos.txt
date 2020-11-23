@@ -1,0 +1,78 @@
+000001: Aula de Processamento de Dados I
+Início: 05/04/2009 07:00
+Fim: 05/04/2009 09:00
+Prioridade: 2
+Nível: Graduação
+
+000002: Aula de Processamento de Dados I
+Início: 07/04/2009 07:00
+Fim: 07/04/2009 09:00
+Prioridade: 2
+Nível: Graduação
+
+000003: Aula de Processamento de Dados II
+Início: 03/04/2009 14:00
+Fim: 03/04/2009 16:00
+Prioridade: 2
+Nível: Graduação
+
+000004: Aula de Linguagens de Programação I
+Início: 04/04/2009 11:00
+Fim: 04/04/2009 13:00
+Prioridade: 4
+Nível: Graduação
+
+000005: Aula de Processamento de Dados II
+Início: 05/04/2009 13:00
+Fim: 05/04/2009 15:00
+Prioridade: 4
+Nível: Graduação
+
+000006: Aula de Engenharia Web
+Início: 06/04/2009 15:00
+Fim: 06/04/2009 18:00
+Prioridade: 10
+Nível: Mestrado
+
+000007: Aula de Linguagens de Programação I
+Início: 07/04/2009 10:00
+Fim: 07/04/2009 13:00
+Prioridade: 6
+Nível: Graduação
+
+000008: Orientação de Igor, Murilo e Marcos
+Início: 06/04/2009 18:00
+Fim: 06/04/2009 20:00
+Prioridade: 3
+Nível: Especialização
+Assunto: Data da Defesa
+
+000009: Reunião
+Início: 05/04/2009 08:00
+Fim: 05/04/2009 08:30
+Prioridade: 5
+Assunto: Novas Grades Curriculares
+
+000010: Workshop de Metodologias em Engenharia Web
+Início: 07/04/2009 08:00
+Fim: 08/04/2009 08:00
+Prioridade: 3
+Local: Centro de Convenções de Vitória
+
+000011: Simpósio Brasileiro de Linguagens de Programação
+Início: 01/04/2009 00:00
+Fim: 04/04/2009 00:00
+Prioridade: 9
+Local: Rio de Janeiro
+
+000012: Almoço de negócios
+Início: 07/04/2009 12:00
+Fim: 07/04/2009 13:00
+Prioridade: 2
+Local: Restaurante Faisão
+
+000013: Consulta ao Médico
+Início: 05/04/2009 08:00
+Fim: 05/04/2009 09:00
+Prioridade: 15
+Local: Edifício Alameda, sala 701

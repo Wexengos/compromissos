@@ -1,0 +1,94 @@
+A000001
+05/04/2009 07:00
+120
+Processamento de Dados I
+Graduação
+1
+
+A000002
+07/04/2009 07:00
+120
+Processamento de Dados I
+Graduação
+1
+
+A000003
+03/04/2009 14:00
+120
+Processamento de Dados II
+Graduação
+1
+
+A000004
+04/04/2009 11:00
+120
+Linguagens de Programação I
+Graduação
+2
+
+A000005
+05/04/2009 13:00
+120
+Processamento de Dados II
+Graduação
+2
+
+A000006
+06/04/2009 15:00
+180
+Engenharia Web
+Mestrado
+5
+
+A000007
+07/04/2009 10:00
+180
+Linguagens de Programação I
+Graduação
+3
+
+O000008
+06/04/2009 18:00
+120
+true
+Igor, Murilo e Marcos
+Especialização
+Data da Defesa
+3
+
+R000009
+05/04/2009 08:00
+30
+false
+Novas Grades Curriculares
+1
+
+E000010
+07/04/2009 08:00
+1
+Workshop de Metodologias em Engenharia Web
+Centro de Convenções de Vitória
+1
+
+E000011
+01/04/2009 00:00
+3
+Simpósio Brasileiro de Linguagens de Programação
+Rio de Janeiro
+3
+
+P000012
+07/04/2009 12:00
+60
+true
+Almoço de negócios
+Restaurante Faisão
+1
+
+P000013
+05/04/2009 08:00
+60
+false
+Consulta ao Médico
+Edifício Alameda, sala 701
+5
