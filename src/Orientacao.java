@@ -9,10 +9,11 @@ public class Orientacao extends Compromissos
     private ArrayList<String> orientados;
     private String tipo;
 
-    public Orientacao(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade);
+    public Orientacao(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade, String nomeOrientado, String assunto, ArrayList<String> orientados, String tipo) {
+        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade, nomeOrientado, assunto);
+        this.orientados = orientados;
+        this.tipo = tipo;
         this.setMultiplicador(1);
-        this.setAdiavel(true);
     }
 
     public ArrayList<String> getOrientados() {

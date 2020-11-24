@@ -7,10 +7,10 @@ public class Aula extends Compromissos
     private String disciplina;
     private String tipo;
 
-    public Aula(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel , grauPrioridade);
-        this.setMultiplicador(2);
-        this.setAdiavel(false);
+    public Aula(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade, String nomeOrientado, String assunto, String disciplina, String tipo) {
+        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade, nomeOrientado, assunto);
+        this.disciplina = disciplina;
+        this.tipo = tipo;
     }
 
     public String getDisciplina() {

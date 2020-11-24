@@ -1,6 +1,6 @@
 package src;
 
-public abstract class Compromissos
+public class Compromissos
 {
     private String data;
     private String hora;
@@ -10,8 +10,10 @@ public abstract class Compromissos
     private int multiplicador;
     private boolean adiavel;
     private int grauPrioridade;
+    private String nomeOrientado;
+    private String assunto;
 
-    public Compromissos(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade) {
+    public Compromissos(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade,String nomeOrientado,String assunto) {
         this.data = data;
         this.hora = hora;
         this.duracao = duracao;
@@ -20,6 +22,24 @@ public abstract class Compromissos
         this.multiplicador = multiplicador;
         this.adiavel = adiavel;
         this.grauPrioridade = grauPrioridade;
+        this.nomeOrientado = nomeOrientado;
+        this.assunto = assunto;
+    }
+
+    public String getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
+
+    public String getNomeOrientado() {
+        return nomeOrientado;
+    }
+
+    public void setNomeOrientado(String nomeOrientado) {
+        this.nomeOrientado = nomeOrientado;
     }
 
     public String getData() {
