@@ -1,19 +1,30 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
-public class Relatorios implements Comparador<Compromissos>{
+public class Relatorios implements Comparable<Compromissos>{
 
     private ArrayList<Compromissos> compromissosInicial = new ArrayList<>();
     private ArrayList<Compromissos> compromissosCofirmados = new ArrayList<>();
     private ArrayList<Compromissos> compromissosAdiados = new ArrayList<>();
     private ArrayList<Compromissos> compromissosCancelados = new ArrayList<>();
 
-    @Override
-    public int ordenaTempo(Compromissos outroCompromisso) {
-        return 0;
+
+    public void cadastraComp(Compromissos c){
+        compromissosInicial.add(c);
     }
+
+    Collections.sort;
+
+    @Override
+    public int comppare(Compromissos a, Compromissos b) {
+        if (a.getMultiplicador() < b.getMultiplicador()) return -1;
+        else if (a.getMultiplicador() > b.getMultiplicador()) return +1;
+        else return 0;
+    }
+}
 
 
 
@@ -45,6 +56,6 @@ public class Relatorios implements Comparador<Compromissos>{
 
         return 0;
     }
-    */
- */
-}
+
+*/
+

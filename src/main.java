@@ -8,6 +8,26 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] src) {
+
+
+        Relatorios r =  new Relatorios();
+
+
+        Aula a1 = new Aula(000001,"A",2,"05/04/2009"," 07:00",120,1,"Processamento de Dados I","Graduacao");
+        Aula a2 = new Aula(000006,"A",6,"05/04/2009"," 13:00",120,1,"Processamento de Dados I","Graduacao");
+        Aula a3 = new Aula(000004,"A",7,"05/04/2009"," 11:00",120,1,"Processamento de Dados I","Graduacao");
+        Aula a4 = new Aula(000007,"A",1,"05/04/2009"," 09:00",120,1,"Processamento de Dados I","Graduacao");
+
+        r.cadastraComp(a1);
+        r.cadastraComp(a2);
+        r.cadastraComp(a3);
+        r.cadastraComp(a4);
+
+
+
+
+    }
+        /*
         Scanner ler = new Scanner(System.in);
 
         System.out.printf("Informe o endereco do arquivo de texto:\n");
@@ -158,6 +178,6 @@ public class main {
 
         System.out.println();
     }
-
+*/
 }
 //D:\git\TrabOO\compromissos\arquivosLeitura\agenda.txt
