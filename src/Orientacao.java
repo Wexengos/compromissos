@@ -6,22 +6,34 @@ import java.util.ArrayList;
 
 public class Orientacao extends Compromissos
 {
-    private ArrayList<String> orientados;
+    private boolean adivel;
+    private String nomeOrientado;
     private String tipo;
+    private String assunto;
 
-    public Orientacao(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade, String nomeOrientado, String assunto, ArrayList<String> orientados, String tipo) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade, nomeOrientado, assunto);
-        this.orientados = orientados;
+    public Orientacao(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String nomeOrientado, String tipo, String assunto) {
+        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+
+        this.nomeOrientado = nomeOrientado;
         this.tipo = tipo;
-        this.setMultiplicador(1);
+        this.assunto = assunto;
+        setMultiplicador(1);
     }
 
-    public ArrayList<String> getOrientados() {
-        return orientados;
+    public boolean isAdivel() {
+        return adivel;
     }
 
-    public void setOrientados(ArrayList<String> orientados) {
-        this.orientados = orientados;
+    public void setAdivel(boolean adivel) {
+        this.adivel = adivel;
+    }
+
+    public String getNomeOrientado() {
+        return nomeOrientado;
+    }
+
+    public void setNomeOrientado(String nomeOrientado) {
+        this.nomeOrientado = nomeOrientado;
     }
 
     public String getTipo() {
@@ -30,5 +42,23 @@ public class Orientacao extends Compromissos
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
+
+    @Override
+    public void imprimiDado() {
+
+    }
+
+    @Override
+    public void calulaDuracao() {
+
     }
 }

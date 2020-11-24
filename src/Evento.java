@@ -3,11 +3,13 @@ import src.Compromissos;
 
 public class Evento extends Compromissos{
     private String local;
-    private String tipo;
+    private String nomeEvento;
 
-    public Evento(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade, String nomeOrientado, String assunto, String local) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade, nomeOrientado, assunto);
+    public Evento(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String local, String nomeEvento) {
+        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
         this.local = local;
+        this.nomeEvento = nomeEvento;
+        setMultiplicador(3);
     }
 
     public String getLocal() {
@@ -18,11 +20,21 @@ public class Evento extends Compromissos{
         this.local = local;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getNomeEvento() {
+        return nomeEvento;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNomeEvento(String nomeEvento) {
+        this.nomeEvento = nomeEvento;
+    }
+
+    @Override
+    public void imprimiDado() {
+
+    }
+
+    @Override
+    public void calulaDuracao() {
+
     }
 }

@@ -4,21 +4,22 @@ import src.Compromissos;
 
 public class Aula extends Compromissos
 {
-    private String disciplina;
+    private String nomeDisciplina;
     private String tipo;
 
-    public Aula(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade, String nomeOrientado, String assunto, String disciplina, String tipo) {
-        super(data, hora, duracao, indentificador, tipoIdentificador, multiplicador, adiavel, grauPrioridade, nomeOrientado, assunto);
-        this.disciplina = disciplina;
+    public Aula(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String nomeDisciplina, String tipo) {
+        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+        this.nomeDisciplina = nomeDisciplina;
         this.tipo = tipo;
+        setMultiplicador(2);
     }
 
-    public String getDisciplina() {
-        return disciplina;
+    public String getNomeDisciplina() {
+        return nomeDisciplina;
     }
 
-    public void setDisciplina(String disciplina) {
-        this.disciplina = disciplina;
+    public void setNomeDisciplina(String nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
     }
 
     public String getTipo() {
@@ -27,5 +28,15 @@ public class Aula extends Compromissos
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public void imprimiDado() {
+        System.out.println();
+    }
+
+    @Override
+    public void calulaDuracao() {
+
     }
 }

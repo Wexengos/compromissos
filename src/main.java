@@ -25,7 +25,7 @@ public class main {
             // salva o tipo do compromisso   (salva o "A" ou o R ,ou o E por ex)
 
             ArrayList<Compromissos>compromissos= new ArrayList();
-
+            Relatorios relatorio;
             while (lerArq) {
 
                 // verificacoes dos tipos de compromissos e tratamento de leitura dos tipos

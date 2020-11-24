@@ -1,45 +1,56 @@
 package src;
 
-public class Compromissos
-{
-    private String data;
-    private String hora;
-    private int duracao;
+public abstract class Compromissos  {
+
+
     private int indentificador;
     private String tipoIdentificador;
     private int multiplicador;
-    private boolean adiavel;
+    private String data;
+    private String hora;
+    private int duracao;
     private int grauPrioridade;
-    private String nomeOrientado;
-    private String assunto;
 
-    public Compromissos(String data, String hora, int duracao, int indentificador, String tipoIdentificador, int multiplicador, boolean adiavel, int grauPrioridade,String nomeOrientado,String assunto) {
-        this.data = data;
-        this.hora = hora;
-        this.duracao = duracao;
+
+    public Compromissos(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade) {
         this.indentificador = indentificador;
         this.tipoIdentificador = tipoIdentificador;
         this.multiplicador = multiplicador;
-        this.adiavel = adiavel;
+        this.data = data;
+        this.hora = hora;
+        this.duracao = duracao;
         this.grauPrioridade = grauPrioridade;
-        this.nomeOrientado = nomeOrientado;
-        this.assunto = assunto;
     }
 
-    public String getAssunto() {
-        return assunto;
+
+
+
+    public abstract void imprimiDado();
+
+    public abstract void calulaDuracao();
+
+    public int getIndentificador() {
+        return indentificador;
     }
 
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
+    public void setIndentificador(int indentificador) {
+        this.indentificador = indentificador;
     }
 
-    public String getNomeOrientado() {
-        return nomeOrientado;
+    public String getTipoIdentificador() {
+        return tipoIdentificador;
     }
 
-    public void setNomeOrientado(String nomeOrientado) {
-        this.nomeOrientado = nomeOrientado;
+    public void setTipoIdentificador(String tipoIdentificador) {
+        this.tipoIdentificador = tipoIdentificador;
+    }
+
+    public int getMultiplicador() {
+        return multiplicador;
+    }
+
+    public void setMultiplicador(int multiplicador) {
+        this.multiplicador = multiplicador;
     }
 
     public String getData() {
@@ -66,38 +77,6 @@ public class Compromissos
         this.duracao = duracao;
     }
 
-    public int getIndentificador() {
-        return indentificador;
-    }
-
-    public void setIndentificador(int indentificador) {
-        this.indentificador = indentificador;
-    }
-
-    public String getTipoIdentificador() {
-        return tipoIdentificador;
-    }
-
-    public void setTipoIdentificador(String tipoIdentificador) {
-        this.tipoIdentificador = tipoIdentificador;
-    }
-
-    public int getMultiplicador() {
-        return multiplicador;
-    }
-
-    public void setMultiplicador(int multiplicador) {
-        this.multiplicador = multiplicador;
-    }
-
-    public boolean isAdiavel() {
-        return adiavel;
-    }
-
-    public void setAdiavel(boolean adiavel) {
-        this.adiavel = adiavel;
-    }
-
     public int getGrauPrioridade() {
         return grauPrioridade;
     }
@@ -106,17 +85,5 @@ public class Compromissos
         this.grauPrioridade = grauPrioridade;
     }
 
-    @Override
-    public String toString() {
-        return "Compromissos{" +
-                "data='" + data + '\'' +
-                ", hora='" + hora + '\'' +
-                ", duracao=" + duracao +
-                ", indentificador=" + indentificador +
-                ", tipoIdentificador='" + tipoIdentificador + '\'' +
-                ", multiplicador=" + multiplicador +
-                ", adiavel=" + adiavel +
-                ", grauPrioridade=" + grauPrioridade +
-                '}';
-    }
+
 }
