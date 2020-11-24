@@ -85,5 +85,16 @@ public abstract class Compromissos  {
         this.grauPrioridade = grauPrioridade;
     }
 
-
+    @Override
+    public String toString() {
+        return "Compromissos{" +
+                "indentificador=" + indentificador +
+                ", tipoIdentificador='" + tipoIdentificador + '\'' +
+                ", multiplicador=" + multiplicador +
+                ", data='" + data + '\'' +
+                ", hora='" + hora + '\'' +
+                ", duracao=" + duracao +
+                ", grauPrioridade=" + grauPrioridade +
+                '}';
+    }
 }

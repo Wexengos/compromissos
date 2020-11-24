@@ -23,6 +23,7 @@ public class main {
         r.cadastraComp(a3);
         r.cadastraComp(a4);
 
+        r.chamaSort();
 
 
 

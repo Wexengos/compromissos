@@ -1,10 +1,12 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
-public class Relatorios implements Comparable<Compromissos>{
+import java.util.Collections;
+import java.util.Collection;
+import java.util.Comparator;
+
+public class Relatorios  {
 
     private ArrayList<Compromissos> compromissosInicial = new ArrayList<>();
     private ArrayList<Compromissos> compromissosCofirmados = new ArrayList<>();
@@ -16,14 +18,66 @@ public class Relatorios implements Comparable<Compromissos>{
         compromissosInicial.add(c);
     }
 
-    Collections.sort;
+    public void CompromissosCofirmados(){
+        /*
+        System.out.print(" "+compromissosAdiados.get(i).getHora());
+        System.out.print("");
+        System.out.println(" "+compromissosAdiados.get(i).getData());
+        System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
+        System.out.println(" PAU NO CU DO NILMER");
 
-    @Override
-    public int comppare(Compromissos a, Compromissos b) {
-        if (a.getMultiplicador() < b.getMultiplicador()) return -1;
-        else if (a.getMultiplicador() > b.getMultiplicador()) return +1;
-        else return 0;
+         */
     }
+    }
+
+    public void relatorioAdiados (){
+        System.out.println("executado");
+        Collections.sort(compromissosAdiados, new Comparator<Compromissos>() {
+            @Override
+            public int compare(Compromissos o1, Compromissos o2) {
+                if(o1.getGrauPrioridade()< o2.getGrauPrioridade())return 1;
+                else if(o1.getGrauPrioridade() > o2.getGrauPrioridade()) return -1;
+                else return 0;
+            }
+        });
+
+        for(int i=0;i<compromissosAdiados.size();i++){
+
+            System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
+            System.out.println(" PAU NO CU DO NILMER");
+            System.out.println(" "+compromissosAdiados.get(i).getGrauPrioridade());
+        }
+
+    }
+
+    public void relatorioCancelados(){
+        System.out.println("executado");
+        Collections.sort(compromissosCancelados, new Comparator<Compromissos>() {
+            @Override
+            public int compare(Compromissos o1, Compromissos o2) {
+                if(o1.getDuracao()< o2.getDuracao())return -1;
+                else if(o1.getDuracao()< o2.getDuracao()) return 1;
+                else return 0;
+            }
+        });
+
+        for(int i=0;i<compromissosAdiados.size();i++){
+
+            System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
+            System.out.println(" PAU NO CU DO NILMER");
+            System.out.println(" "+compromissosAdiados.get(i).getGrauPrioridade());
+        }
+
+
+
+    }
+    public void relatiorCompleto() {
+
+
+    }
+
+
+
 }
 
 
