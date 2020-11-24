@@ -1,5 +1,8 @@
 package src;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -28,9 +31,9 @@ public class Relatorios  {
 
          */
     }
-    }
 
-    public void relatorioAdiados (){
+
+    public void relatorioAdiados () throws IOException {
         System.out.println("executado");
         Collections.sort(compromissosAdiados, new Comparator<Compromissos>() {
             @Override
@@ -41,16 +44,21 @@ public class Relatorios  {
             }
         });
 
-        for(int i=0;i<compromissosAdiados.size();i++){
+        FileWriter arq = new FileWriter("C:\\Users\\Marcos\\Desktop\\Trab\\compromissos\\arquivosLeitura\\teste saida\\relatorioAdiados.txt");
+        PrintWriter gravarArq = new PrintWriter(arq);
 
-            System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
-            System.out.println(" PAU NO CU DO NILMER");
-            System.out.println(" "+compromissosAdiados.get(i).getGrauPrioridade());
+
+        for(int i=0;i<compromissosInicial.size();i++){
+
+            gravarArq.printf(" \n"+compromissosInicial.get(i).getIndentificador());
+            gravarArq.printf(" PAU NO CU DO NILMER \n");
+            gravarArq.printf("  \n"+compromissosInicial.get(i).getGrauPrioridade());
         }
+        arq.close();
 
     }
 
-    public void relatorioCancelados(){
+    public void relatorioCancelados() throws IOException {
         System.out.println("executado");
         Collections.sort(compromissosCancelados, new Comparator<Compromissos>() {
             @Override
@@ -61,12 +69,17 @@ public class Relatorios  {
             }
         });
 
-        for(int i=0;i<compromissosAdiados.size();i++){
+        FileWriter arq = new FileWriter("C:\\Users\\Marcos\\Desktop\\Trab\\compromissos\\arquivosLeitura\\teste saida\\relatorioCancelados.txt");
+        PrintWriter gravarArq = new PrintWriter(arq);
 
-            System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
-            System.out.println(" PAU NO CU DO NILMER");
-            System.out.println(" "+compromissosAdiados.get(i).getGrauPrioridade());
+
+        for(int i=0;i<compromissosCancelados.size();i++){
+
+            gravarArq.printf(" \n"+compromissosCancelados.get(i).getIndentificador());
+            gravarArq.printf(" PAU NO CU DO NILMER \n");
+            gravarArq.printf("  \n"+compromissosCancelados.get(i).getGrauPrioridade());
         }
+        arq.close();
 
 
 
@@ -85,31 +98,4 @@ public class Relatorios  {
 
 
 
-/*
-    @Override
-    public int comparadorAdiados(Compromissos c1, Compromissos c2) {
-        if((c1.getGrauPrioridade()*c1.getMultiplicador())>(c2.getGrauPrioridade()* c2.getMultiplicador())){
-            return -1;
-        }
-        if((c1.getGrauPrioridade()*c1.getMultiplicador())<(c2.getGrauPrioridade()* c2.getMultiplicador())){
-            return 1;
-        }
-        return 0;
-
-    }
-
-    @Override
-    public int comparadorCancelados(Compromissos c1, Compromissos c2) {
-
-        if(c1.getDuracao()> c2.getDuracao()){
-            return 1;
-        }
-        if(c1.getDuracao()> c2.getDuracao()){
-            return -1;
-        }
-
-        return 0;
-    }
-
-*/
 
