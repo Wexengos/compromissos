@@ -2,16 +2,14 @@ package src;
 
 import src.Compromissos;
 
-public class Aula extends Compromissos
-{
+public class Aula extends Compromissos {
     private String nomeDisciplina;
     private String tipo;
 
-    public Aula(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String nomeDisciplina, String tipo) {
-        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+    public Aula(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade, String nomeDisciplina, String tipo) {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
         this.nomeDisciplina = nomeDisciplina;
         this.tipo = tipo;
-        setMultiplicador(2);
     }
 
     public String getNomeDisciplina() {
@@ -36,7 +34,10 @@ public class Aula extends Compromissos
     }
 
     @Override
-    public void calulaDuracao() {
+    public void converteDuracaoHora() {
+
 
     }
+
+
 }

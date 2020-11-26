@@ -1,6 +1,11 @@
 package src;
 
-public abstract class Compromissos  {
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public abstract class Compromissos {
 
 
     private int indentificador;
@@ -10,24 +15,33 @@ public abstract class Compromissos  {
     private String hora;
     private int duracao;
     private int grauPrioridade;
+    private String horafinal;
 
 
-    public Compromissos(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade) {
+    public Compromissos(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade) throws ParseException {
         this.indentificador = indentificador;
         this.tipoIdentificador = tipoIdentificador;
-        this.multiplicador = multiplicador;
+        this.multiplicador = 2;
         this.data = data;
         this.hora = hora;
         this.duracao = duracao;
         this.grauPrioridade = grauPrioridade;
+        this.horafinal=horafinal;
+
+
     }
 
+    public String getHorafinal() {
+        return horafinal;
+    }
 
-
+    public void setHorafinal(String horafinal) {
+        this.horafinal = horafinal;
+    }
 
     public abstract void imprimiDado();
 
-    public abstract void calulaDuracao();
+    public abstract void converteDuracaoHora();
 
     public int getIndentificador() {
         return indentificador;
@@ -96,5 +110,23 @@ public abstract class Compromissos  {
                 ", duracao=" + duracao +
                 ", grauPrioridade=" + grauPrioridade +
                 '}';
+    }
+
+    public void calculaTempo() throws ParseException {
+
+        long epoch = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse(this.getData()).getTime();
+        System.out.println(epoch);
+        long duracao = this.getDuracao() * 60000;
+        System.out.println(duracao);
+        epoch+=duracao;
+        System.out.println(epoch);
+        Date date = new Date(epoch);
+        System.out.println(date.getTime());
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        String s = dateFormat.format(date);
+        System.out.println(s);
+
+
+
     }
 }

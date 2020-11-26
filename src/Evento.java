@@ -1,12 +1,13 @@
 package src;
+
 import src.Compromissos;
 
-public class Evento extends Compromissos{
+public class Evento extends Compromissos {
     private String local;
     private String nomeEvento;
 
-    public Evento(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String local, String nomeEvento) {
-        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+    public Evento(int indentificador, String tipoIdentificador, String data, String hora, int duracao, String nomeEvento, String local, int grauPrioridade) {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
         this.local = local;
         this.nomeEvento = nomeEvento;
         setMultiplicador(3);
@@ -34,7 +35,9 @@ public class Evento extends Compromissos{
     }
 
     @Override
-    public void calulaDuracao() {
+    public void converteDuracaoHora() {
 
     }
+
+
 }

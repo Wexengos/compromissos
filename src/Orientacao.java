@@ -2,17 +2,17 @@ package src;
 
 import src.Compromissos;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Orientacao extends Compromissos
-{
-    private boolean adivel;
+public class Orientacao extends Compromissos {
+    private boolean adiavel;
     private String nomeOrientado;
     private String tipo;
     private String assunto;
 
-    public Orientacao(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String nomeOrientado, String tipo, String assunto) {
-        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+    public Orientacao(int indentificador, String tipoIdentificador, String data, String hora, int duracao, boolean adiavel, String nomeOrientado, String tipo, String assunto,int grauPrioridade) throws ParseException {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,);
 
         this.nomeOrientado = nomeOrientado;
         this.tipo = tipo;
@@ -20,12 +20,12 @@ public class Orientacao extends Compromissos
         setMultiplicador(1);
     }
 
-    public boolean isAdivel() {
-        return adivel;
+    public boolean isAdiavel() {
+        return adiavel;
     }
 
-    public void setAdivel(boolean adivel) {
-        this.adivel = adivel;
+    public void setAdiavel(boolean adiavel) {
+        this.adiavel = adiavel;
     }
 
     public String getNomeOrientado() {
@@ -58,7 +58,8 @@ public class Orientacao extends Compromissos
     }
 
     @Override
-    public void calulaDuracao() {
+    public void converteDuracaoHora() {
 
     }
+
 }

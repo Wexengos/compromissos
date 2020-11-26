@@ -3,37 +3,75 @@ package src;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.*;
 
-import java.util.Collections;
-import java.util.Collection;
-import java.util.Comparator;
+public class Relatorios implements AcaoRelatorios {
 
-public class Relatorios  {
-
-    private ArrayList<Compromissos> compromissosInicial = new ArrayList<>();
-    private ArrayList<Compromissos> compromissosCofirmados = new ArrayList<>();
-    private ArrayList<Compromissos> compromissosAdiados = new ArrayList<>();
-    private ArrayList<Compromissos> compromissosCancelados = new ArrayList<>();
+    private List<Compromissos> compromissosInicial;
+    private List<Compromissos> compromissosCofirmados ;
+    private List<Compromissos> compromissos_com_conflitos ;
+    private List<Compromissos> compromissosAdiados ;
+    private List<Compromissos> compromissosCancelados ;
 
 
     public void cadastraComp(Compromissos c){
         compromissosInicial.add(c);
     }
 
-    public void CompromissosCofirmados(){
-        /*
-        System.out.print(" "+compromissosAdiados.get(i).getHora());
-        System.out.print("");
-        System.out.println(" "+compromissosAdiados.get(i).getData());
-        System.out.println(" "+compromissosAdiados.get(i).getIndentificador());
-        System.out.println(" PAU NO CU DO NILMER");
-
-         */
+    public Relatorios() {
+        this.compromissosInicial= new ArrayList<>();
+        this.compromissosCofirmados= new ArrayList<>();
+        this.compromissos_com_conflitos= new ArrayList<>();
+        this.compromissosAdiados= new ArrayList<>();
+        this.compromissosCancelados= new ArrayList<>();
     }
 
+    @Override
+    public void compromissosConfirmados() {
 
-    public void relatorioAdiados () throws IOException {
+        /*
+        for (int i = 0; i < compromissosInicial.size() - 1; i++) {
+            for (int j = i + 1; j < compromissosInicial.size(); j++) {
+
+                try {
+                    long epoch = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse(compromissosInicial.get(i).getData()).getTime();
+                    long epoch1 = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse(compromissosInicial.get(j).getData()).getTime();
+                    Date data1 = new Date(epoch);
+                    Date data2 = new Date(epoch1);
+                    if (data1.compareTo(data2) < 0) {
+                        compromissosCofirmados.add(compromissosInicial.get(i));
+
+                    } else {
+                        if (data1.compareTo(data2) > 0) {
+                            compromissosCofirmados.add(compromissosInicial.get(i));
+                        } else {
+                            if (data1.compareTo(data2) == 0) {
+                                compromissos_com_conflitos.add(compromissosInicial.get(i));
+                                compromissos_com_conflitos.add(compromissosInicial.get(j));
+
+                            }
+
+                        }
+                    }
+                }catch(Exception e){
+                            System.out.println("Erro");
+                        }
+
+                    }
+
+
+
+            }
+
+         */
+        }
+
+
+
+
+
+    @Override
+    public void relatorioAdiados() throws IOException {
         System.out.println("executado");
         Collections.sort(compromissosAdiados, new Comparator<Compromissos>() {
             @Override
@@ -55,9 +93,9 @@ public class Relatorios  {
             gravarArq.printf("  \n"+compromissosInicial.get(i).getGrauPrioridade());
         }
         arq.close();
-
     }
 
+    @Override
     public void relatorioCancelados() throws IOException {
         System.out.println("executado");
         Collections.sort(compromissosCancelados, new Comparator<Compromissos>() {
@@ -84,13 +122,50 @@ public class Relatorios  {
 
 
     }
-    public void relatiorCompleto() {
 
+    @Override
+    public void relatorioCompleto() {
 
     }
 
 
 
+
+    public void imprimeRelatorioInicial(){
+
+        for(int i = 0; i<compromissosInicial.size();i++){
+
+            System.out.println(" "+compromissosInicial.get(i).getIndentificador());
+            System.out.println(" " + compromissosInicial.get(i).getHora());
+
+            System.out.println(" " + compromissosInicial.get(i).getHorafinal());
+
+        }
+
+    }
+
+    public void imprimeRelatorioConfirmados() {
+
+        for (int i = 0; i < compromissosCofirmados.size(); i++) {
+
+            System.out.println(" " + compromissosCofirmados.get(i).getIndentificador());
+
+
+
+        }
+    }
+
+    public void imprimeRelatorioDefeito() {
+
+        for (int i = 0; i < compromissos_com_conflitos.size(); i++) {
+
+            System.out.println(" " + compromissos_com_conflitos.get(i).getIndentificador());
+
+
+        }
+
+
+    }
 }
 
 

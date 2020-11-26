@@ -6,8 +6,9 @@ public class Reuniao extends Compromissos {
     private boolean adiavel;
 
 
-    public Reuniao(int indentificador, String tipoIdentificador, int multiplicador, String data, String hora, int duracao, int grauPrioridade, String assunto) {
-        super(indentificador, tipoIdentificador, multiplicador, data, hora, duracao, grauPrioridade);
+    public Reuniao(int indentificador, String tipoIdentificador,String data, String hora, int duracao, boolean adiavel, String assunto,int grauPrioridade) {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+        this.adiavel = adiavel;
         this.assunto = assunto;
         setMultiplicador(4);
     }
@@ -34,7 +35,8 @@ public class Reuniao extends Compromissos {
     }
 
     @Override
-    public void calulaDuracao() {
+    public void converteDuracaoHora() {
 
     }
+
 }
