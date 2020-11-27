@@ -11,8 +11,8 @@ public class Orientacao extends Compromissos {
     private String tipo;
     private String assunto;
 
-    public Orientacao(int indentificador, String tipoIdentificador, String data, String hora, int duracao, boolean adiavel, String nomeOrientado, String tipo, String assunto,int grauPrioridade) throws ParseException {
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,);
+    public Orientacao(int indentificador, String tipoIdentificador, String data, String hora, int duracao, boolean adiavel, String nomeOrientado, String tipo, String assunto,int grauPrioridade){
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
 
         this.nomeOrientado = nomeOrientado;
         this.tipo = tipo;

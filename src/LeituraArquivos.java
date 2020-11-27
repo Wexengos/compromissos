@@ -14,7 +14,7 @@ public class LeituraArquivos {
         System.out.printf("Informe o endereco do arquivo de texto:\n");
         System.out.printf("Exemplo: D:\\git\\TrabOO\\compromissos\\arquivosLeitura\\agenda.txt \n");
         //String nome = ler.nextLine(); //essa linha faz a leitura do local do arquivo de entrada pelo teclado
-        String nomeArq = "C:\\Users\\Marcos\\Desktop\\Trab\\compromissos\\arquivosLeitura\\agenda.txt"; //  <---- aqui ta de maneira fixa , altere para  o seu local para testes
+        String nomeArq = "D:\\git\\TrabOO\\compromissos\\arquivosLeitura\\agenda.txt"; //  <---- aqui ta de maneira fixa , altere para  o seu local para testes
 
 
         System.out.printf("\nConteúdo do arquivo texto:\n");
@@ -156,19 +156,16 @@ public class LeituraArquivos {
                         int grauPrioridadeCompromisso = Integer.parseInt(linha);
                         CompParticular cp = new CompParticular(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,adiavel,motivo,local,grauPrioridadeCompromisso);
                         relatorio.cadastraComp(cp);
+                        relatorio.imprimeRelatorioInicial();
+                        relatorio.compromissosConfirmados();
+                        System.out.println("imprimindo relatorio confirmados");
+                        relatorio.imprimeRelatorioConfirmados();
 
 
 
                         linha = lerArq.readLine();
                         linha = lerArq.readLine();
                         tipoCompromisso = linha.substring(0, 1);
-                        relatorio.imprimeRelatorioInicial();
-
-                        relatorio.compromissosConfirmados();
-                        System.out.println("Imprimindo confirmados");
-                        relatorio.imprimeRelatorioConfirmados();
-                        System.out.println("Imprimindo bugado");
-                        relatorio.imprimeRelatorioDefeito();
                         break;
 
 

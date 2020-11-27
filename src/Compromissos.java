@@ -8,17 +8,20 @@ import java.util.Date;
 public abstract class Compromissos {
 
 
-    private int indentificador;
-    private String tipoIdentificador;
-    private int multiplicador;
-    private String data;
-    private String hora;
-    private int duracao;
-    private int grauPrioridade;
-    private String horafinal;
+    protected int indentificador;
+    protected String tipoIdentificador;
+    protected int multiplicador;
+    protected String data;
+    protected String hora;
+    protected int duracao;
+    protected int grauPrioridade;
+    protected long inicioCompromisso;
+    protected long finalCompromisso;
+    protected boolean conflito;
 
 
-    public Compromissos(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade) throws ParseException {
+
+    public Compromissos(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade) {
         this.indentificador = indentificador;
         this.tipoIdentificador = tipoIdentificador;
         this.multiplicador = 2;
@@ -26,22 +29,33 @@ public abstract class Compromissos {
         this.hora = hora;
         this.duracao = duracao;
         this.grauPrioridade = grauPrioridade;
-        this.horafinal=horafinal;
+        this.conflito = false;
+        chamaIniciaCalculoTempo();
+
+        //this.horafinal=horafinal;
 
 
     }
-
-    public String getHorafinal() {
-        return horafinal;
+    public void chamaIniciaCalculoTempo(){
+        try {
+            calculaTempo();
+        }catch (Exception e){
+        System.out.println("deuruim");
+    }
     }
 
-    public void setHorafinal(String horafinal) {
-        this.horafinal = horafinal;
-    }
 
     public abstract void imprimiDado();
 
     public abstract void converteDuracaoHora();
+
+    public boolean getConflito() {
+        return conflito;
+    }
+
+    public void setConflito(boolean conflito) {
+        this.conflito = conflito;
+    }
 
     public int getIndentificador() {
         return indentificador;
@@ -99,6 +113,14 @@ public abstract class Compromissos {
         this.grauPrioridade = grauPrioridade;
     }
 
+    public long getInicioCompromisso() {
+        return inicioCompromisso;
+    }
+
+    public long getFinalCompromisso() {
+        return finalCompromisso;
+    }
+
     @Override
     public String toString() {
         return "Compromissos{" +
@@ -113,20 +135,57 @@ public abstract class Compromissos {
     }
 
     public void calculaTempo() throws ParseException {
-
-        long epoch = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse(this.getData()).getTime();
-        System.out.println(epoch);
-        long duracao = this.getDuracao() * 60000;
-        System.out.println(duracao);
-        epoch+=duracao;
-        System.out.println(epoch);
-        Date date = new Date(epoch);
-        System.out.println(date.getTime());
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        String s = dateFormat.format(date);
-        System.out.println(s);
-
-
-
+        try{
+            //long epoch = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse(this.getData()).getTime();
+            SimpleDateFormat teste1 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            String data1 = this.data;
+            String hora1 = this.hora;
+            String dataHoraJunto1 = data1.concat(" ".concat(hora1));
+            int duracao1 = this.duracao;
+            Date date1  = teste1.parse(dataHoraJunto1);
+            this.inicioCompromisso= (date1.getTime()/1000)/60;
+            this.finalCompromisso = ((date1.getTime()/1000)/60)+duracao1;
+        }
+        catch (Exception e){
+            System.out.println("mingau");
+        }
     }
+//
+//            SimpleDateFormat teste2 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+//            String data2 = "01/04/2009";
+//            String hora2 = "12:30";
+//            String dataHoraJunto2 = data2.concat(" ".concat(hora2));
+//            int duracao2 = 500;
+//            Date date2  = teste2.parse(dataHoraJunto2);
+//            long inicioComp2 = (date2.getTime()/1000)/60;
+//            long finalComp2 = ((date2.getTime()/1000)/60)+duracao2;
+//            System.out.println(inicioComp2);
+//            System.out.println(finalComp2);
+            //System.out.println((inicioComp2-dataSemDuracao2));
+
+//            if(inicioComp2<finalComp1){
+//                System.out.println("deu conflito pois o compromisso 1 ainda nao terminou");
+//
+//            }
+//            else{
+//                adiciona esse compromisso a lista de confirmados
+//            }
+
+
+
+//            String data2 = "01/04/2009";
+//            String hora2 = "12:30";
+//            int duracao2 = 60;
+//            Date date2  = teste.parse(data2);
+
+//            long duracao = this.getDuracao() * 60000;
+//            System.out.println(duracao);
+//            epoch += duracao;
+//            System.out.println(epoch);
+//            Date date = new Date(epoch);
+//            System.out.println(date.getTime());
+//            DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//            String s = dateFormat.format(date);
+//            System.out.println(s);
+
 }

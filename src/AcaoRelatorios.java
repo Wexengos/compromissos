@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public interface AcaoRelatorios {
 
-    void relatorioAdiados () throws IOException;
-    void relatorioCancelados() throws IOException;
-    void relatorioCompleto();
-    void compromissosConfirmados();
+    public abstract void relatorioAdiados ();
+    public abstract  void relatorioCancelados();
+    public abstract void relatorioCompleto();
+    public abstract void compromissosConfirmados();
 
 }
