@@ -6,13 +6,13 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Orientacao extends Compromissos {
-    private boolean adiavel;
+
     private String nomeOrientado;
     private String tipo;
     private String assunto;
 
     public Orientacao(int indentificador, String tipoIdentificador, String data, String hora, int duracao, boolean adiavel, String nomeOrientado, String tipo, String assunto,int grauPrioridade){
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,adiavel);
 
         this.nomeOrientado = nomeOrientado;
         this.tipo = tipo;

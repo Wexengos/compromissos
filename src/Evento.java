@@ -6,8 +6,8 @@ public class Evento extends Compromissos {
     private String local;
     private String nomeEvento;
 
-    public Evento(int indentificador, String tipoIdentificador, String data, String hora, int duracao, String nomeEvento, String local, int grauPrioridade) {
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+    public Evento(int indentificador, String tipoIdentificador, String data, String hora, int duracao, String nomeEvento, String local, int grauPrioridade,boolean adiavel) {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,adiavel);
         this.local = local;
         this.nomeEvento = nomeEvento;
         setMultiplicador(3);

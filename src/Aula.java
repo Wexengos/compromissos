@@ -6,8 +6,9 @@ public class Aula extends Compromissos {
     private String nomeDisciplina;
     private String tipo;
 
-    public Aula(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade, String nomeDisciplina, String tipo) {
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+
+    public Aula(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade, String nomeDisciplina, String tipo,boolean adiavel) {
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,adiavel);
         this.nomeDisciplina = nomeDisciplina;
         this.tipo = tipo;
     }

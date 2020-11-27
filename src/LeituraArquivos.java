@@ -14,7 +14,7 @@ public class LeituraArquivos {
         System.out.printf("Informe o endereco do arquivo de texto:\n");
         System.out.printf("Exemplo: D:\\git\\TrabOO\\compromissos\\arquivosLeitura\\agenda.txt \n");
         //String nome = ler.nextLine(); //essa linha faz a leitura do local do arquivo de entrada pelo teclado
-        String nomeArq = "D:\\git\\TrabOO\\compromissos\\arquivosLeitura\\agenda.txt"; //  <---- aqui ta de maneira fixa , altere para  o seu local para testes
+        String nomeArq = "C:\\Users\\Marcos\\Desktop\\Trab\\compromissos\\arquivosLeitura\\agenda.txt"; //  <---- aqui ta de maneira fixa , altere para  o seu local para testes
 
 
         System.out.printf("\nConteúdo do arquivo texto:\n");
@@ -39,12 +39,16 @@ public class LeituraArquivos {
                         linha = lerArq.readLine();
                         int duracaoCompromisso = Integer.parseInt(linha);
                         linha = lerArq.readLine();
+                        boolean adiavel = false;
+                        if (linha.equals("true")) {
+                            adiavel = true;
+                        }
                         String nome = linha;
                         linha = lerArq.readLine();
                         String tipoAula = linha;
                         linha = lerArq.readLine();
                         int grauPrioridadeCompromisso = Integer.parseInt(linha);
-                        Aula a = new Aula(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,grauPrioridadeCompromisso,nome,tipoAula);
+                        Aula a = new Aula(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,grauPrioridadeCompromisso,nome,tipoAula,adiavel);
                         relatorio.cadastraComp(a);
 
 
@@ -121,12 +125,18 @@ public class LeituraArquivos {
                         linha = lerArq.readLine();
                         int duracaoCompromisso = Integer.parseInt(linha);
                         linha = lerArq.readLine();
+                        boolean adiavel = false;
+                        if (linha.equals("true")) {
+                            adiavel = true;
+                        }
+
+
                         String nomeEvento = linha;
                         linha = lerArq.readLine();
                         String local = linha;
                         linha = lerArq.readLine();
                         int grauPrioridadeCompromisso = Integer.parseInt(linha);
-                        Evento e = new Evento(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,nomeEvento,local,grauPrioridadeCompromisso);
+                        Evento e = new Evento(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,nomeEvento,local,grauPrioridadeCompromisso,adiavel);
                         relatorio.cadastraComp(e);
 
 
@@ -156,10 +166,15 @@ public class LeituraArquivos {
                         int grauPrioridadeCompromisso = Integer.parseInt(linha);
                         CompParticular cp = new CompParticular(idCompromisso,tipoCompromisso,dataCompromisso,horaCompromisso,duracaoCompromisso,adiavel,motivo,local,grauPrioridadeCompromisso);
                         relatorio.cadastraComp(cp);
+
                         relatorio.imprimeRelatorioInicial();
                         relatorio.compromissosConfirmados();
-                        System.out.println("imprimindo relatorio confirmados");
-                        relatorio.imprimeRelatorioConfirmados();
+                        relatorio.relatorioAdiados();
+
+
+
+
+
 
 
 

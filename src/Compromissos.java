@@ -15,21 +15,33 @@ public abstract class Compromissos {
     protected String hora;
     protected int duracao;
     protected int grauPrioridade;
+    protected boolean adiavel;
     protected long inicioCompromisso;
     protected long finalCompromisso;
     protected boolean conflito;
+    protected boolean add;
+    protected boolean adiado;
+    protected boolean cancelado;
+    protected boolean confirmado;
 
 
 
-    public Compromissos(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade) {
+
+
+
+    public Compromissos(int indentificador, String tipoIdentificador, String data, String hora, int duracao, int grauPrioridade,boolean adiavel) {
         this.indentificador = indentificador;
         this.tipoIdentificador = tipoIdentificador;
-        this.multiplicador = 2;
         this.data = data;
         this.hora = hora;
         this.duracao = duracao;
         this.grauPrioridade = grauPrioridade;
+        this.adiavel=adiavel;
+        this.adiado=false;
         this.conflito = false;
+        this.add = false;
+        this.cancelado = false;
+        this.confirmado = false;
         chamaIniciaCalculoTempo();
 
         //this.horafinal=horafinal;
@@ -44,6 +56,39 @@ public abstract class Compromissos {
     }
     }
 
+    public boolean getAdiado() {
+        return adiado;
+    }
+
+
+    public boolean getCancelado() {
+        return cancelado;
+    }
+
+    public boolean getConfirmado() {
+        return confirmado;
+    }
+
+    public void setConfirmado(boolean confirmado) {
+        this.confirmado = confirmado;
+    }
+
+    public void setCancelado(boolean cancelado) {
+        this.cancelado = cancelado;
+    }
+
+    public void setAdiado(boolean adiado) {
+        this.adiado = adiado;
+    }
+
+    public boolean getAdd() {
+        return add;
+    }
+
+    public void setAdd(boolean add) {
+        this.add = add;
+    }
+
 
     public abstract void imprimiDado();
 
@@ -51,6 +96,14 @@ public abstract class Compromissos {
 
     public boolean getConflito() {
         return conflito;
+    }
+
+    public boolean getAdiavel() {
+        return adiavel;
+    }
+
+    public void setAdiavel(boolean adiavel) {
+        this.adiavel = adiavel;
     }
 
     public void setConflito(boolean conflito) {

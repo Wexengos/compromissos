@@ -6,7 +6,7 @@ public class CompParticular extends Compromissos{
 
 
     public CompParticular(int indentificador, String tipoIdentificador, String data ,String hora, int duracao,boolean adiavel, String motivo, String local,int grauPrioridade) {
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,adiavel);
         this.motivo = motivo;
         this.local = local;
         setMultiplicador(2);

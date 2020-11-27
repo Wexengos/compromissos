@@ -3,11 +3,11 @@ package src;
 public class Reuniao extends Compromissos {
 
     private String assunto;
-    private boolean adiavel;
+
 
 
     public Reuniao(int indentificador, String tipoIdentificador,String data, String hora, int duracao, boolean adiavel, String assunto,int grauPrioridade) {
-        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade);
+        super(indentificador, tipoIdentificador, data, hora, duracao, grauPrioridade,adiavel);
         this.adiavel = adiavel;
         this.assunto = assunto;
         setMultiplicador(4);
